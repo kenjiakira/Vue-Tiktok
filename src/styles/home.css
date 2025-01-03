@@ -93,4 +93,8 @@
     margin-top: 16px;
     padding: 16px;
   }
+  
+  .input-wrapper {
+    flex-direction: column;
+  }
 }

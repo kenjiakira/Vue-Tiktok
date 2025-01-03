@@ -4,6 +4,11 @@
     <div class="content">
       <div class="input-container">
         <div class="input-wrapper">
+          <Button 
+            @click="pasteFromClipboard"
+            variant="paste"
+            :icon-component="ClipboardIcon"
+          />
           <Input
             v-model="tiktokUrl"
             placeholder="Paste TikTok URL"
@@ -14,9 +19,8 @@
             :loading="loading"
             :disabled="!tiktokUrl"
             variant="submit"
-            icon="⭳"
-            :showIconOnly="windowWidth <= 640"
           >
+            <ArrowDownTrayIcon class="w-3 h-3" /> <!-- Thêm class để điều chỉnh kích thước -->
             Download
           </Button>
         </div>
@@ -46,6 +50,7 @@ import MediaGrid from '@/components/MediaGrid.vue';
 import Button from '@/components/Button.vue';
 import Input from '@/components/Input.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
+import { ArrowDownTrayIcon, ClipboardIcon } from '@heroicons/vue/24/outline'
 
 const windowWidth = ref(window.innerWidth);
 const tiktokUrl = ref('');
@@ -54,6 +59,16 @@ const updateWidth = () => {
   windowWidth.value = window.innerWidth;
 };
 
+const pasteFromClipboard = async () => {
+  try {
+    const text = await navigator.clipboard.readText();
+    tiktokUrl.value = text;
+  } catch (err) {
+    error.value = "Unable to paste from clipboard";
+    hideError();
+  }
+};
+  
 onMounted(() => {
   window.addEventListener('resize', updateWidth);
 });
@@ -88,19 +103,4 @@ const downloadVideo = async () => {
       error.value = err instanceof Error ? err.message : 'An error occurred';
       hideError();
     }
-  } finally {
-    loading.value = false;
-  }
-}
-</script>
-
-<style scoped>
-@import "../styles/home.css";
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;  
-  padding: 0 16px;
-}
-</style>
+  } finally {    loading.value = false;  }}</script><style scoped>@import "../styles/home.css";.content {  display: flex;  flex-direction: column;  gap: 24px;    padding: 0 16px;}.w-3 {  width: 12px;  height: 12px;}</style>

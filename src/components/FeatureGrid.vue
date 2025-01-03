@@ -1,32 +1,40 @@
 <template>
-  <div class="features-grid" v-if="!hideFeatures">
-    <div class="feature">
-      <div class="feature-icon-wrapper">
-        <div class="feature-icon">⚡</div>
+  <div v-if="!hideFeatures">
+    <h2 class="features-heading">
+      Save TT Videos For<br class="mobile-break"> 
+      <span class="highlight">&amp;</span><br class="mobile-break">
+      Free using our<br class="mobile-break"> 
+      TikTok Video Downloader
+    </h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">⚡</div>
+        </div>
+        <div class="feature-content">
+          <h3>Unlimited Downloads</h3>
+          <p>Experience unrestricted video downloads with TikSave. No constraints, just limitless content available for you.</p>
+        </div>
       </div>
-      <div class="feature-content">
-        <h3>Unlimited Downloads</h3>
-        <p>Experience unrestricted video downloads with TikSave. No constraints, just limitless content available for you.</p>
+      
+      <div class="feature">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">🎯</div>
+        </div>
+        <div class="feature-content">
+          <h3>Eliminate the Watermark</h3>
+          <p>Effortlessly get rid of annoying TikTok symbols from your downloaded videos. Say goodbye to watermarks with TikSave.</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="feature">
-      <div class="feature-icon-wrapper">
-        <div class="feature-icon">🎯</div>
-      </div>
-      <div class="feature-content">
-        <h3>Eliminate the Watermark</h3>
-        <p>Effortlessly get rid of annoying TikTok symbols from your downloaded videos. Say goodbye to watermarks with TikSave.</p>
-      </div>
-    </div>
-    
-    <div class="feature">
-      <div class="feature-icon-wrapper">
-        <div class="feature-icon">🎵</div>
-      </div>
-      <div class="feature-content">
-        <h3>MP4 and MP3 Support</h3>
-        <p>Save your favorite TikTok videos in high-quality MP4 format or convert them to MP3 audio files for various uses.</p>
+      
+      <div class="feature">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">🎵</div>
+        </div>
+        <div class="feature-content">
+          <h3>MP4 and MP3 Support</h3>
+          <p>Save your favorite TikTok videos in high-quality MP4 format or convert them to MP3 audio files for various uses.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -137,6 +145,27 @@ watch(isVideoLoading, (newVal) => {
   }
 }
 
+.features-heading {
+  text-align: center;
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+  margin-bottom: 48px;
+  color: white;
+  padding: 0 16px;
+  line-height: 1.4;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 4px;
+}
+
+.mobile-break {
+  display: none;
+}
+
 @media (max-width: 1600px) {
   .features-grid {
     max-width: 1400px;
@@ -230,6 +259,23 @@ watch(isVideoLoading, (newVal) => {
   .feature:hover .feature-icon-wrapper {
     transform: none;
     box-shadow: 0 8px 32px rgba(255, 59, 141, 0.15);
+  }
+
+  .features-heading {
+    font-size: 22px;
+    margin: 24px 0 32px;
+    line-height: 1.8;
+    padding: 0 12px;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
+  .highlight {
+    display: inline-block;
+    margin: 8px 0;
+    font-size: 26px;
   }
 }
 </style>

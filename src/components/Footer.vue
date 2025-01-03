@@ -17,6 +17,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ currentYear }} TikSave · Made by Ngọc Từ With Love ❤️</p>
+      <p class="disclaimer">This product is not associated with, sponsored by, or endorsed by TikTok or any of its affiliates.</p>
     </div>
   </footer>
 </template>
@@ -106,6 +107,12 @@ const currentYear = computed(() => new Date().getFullYear());
   gap: 4px;
 }
 
+.disclaimer {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
 @media (max-width: 640px) {
   .footer {
     padding: 16px;
@@ -130,6 +137,11 @@ const currentYear = computed(() => new Date().getFullYear());
   .footer-bottom {
     margin-top: 12px;
     padding-top: 12px;
+  }
+
+  .disclaimer {
+    margin-top: 6px;
+    font-size: 11px;
   }
 }
 </style>

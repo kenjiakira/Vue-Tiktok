@@ -1,47 +1,32 @@
 <template>
   <button 
     class="button" 
-    :class="[
-      variant, 
-      { 'loading': loading,
-        'icon-only': showIconOnly || isMobile 
-      }
-    ]" 
+    :class="[variant, { 'loading': loading }]" 
     :disabled="loading || disabled"
     @click="$emit('click')"
   >
-    <span class="icon" v-if="icon">{{ icon }}</span>
-    <span class="text" v-if="!(showIconOnly || isMobile)">
-      <slot>{{ loading ? '...' : 'Submit' }}</slot>
+    <component 
+      v-if="iconComponent" 
+      :is="iconComponent" 
+      class="icon" 
+      :width="16"  
+      :height="16"
+    />
+    <span v-else-if="icon" class="icon">{{ icon }}</span>
+    <span class="text">
+      <slot>{{ loading ? '...' : '' }}</slot>
     </span>
   </button>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
 const props = defineProps<{
   loading?: boolean
   disabled?: boolean
-  variant?: 'default' | 'submit'
-  showIconOnly?: boolean
+  variant?: 'default' | 'submit' | 'paste'
   icon?: string
+  iconComponent?: any
 }>()
-
-const isMobile = ref(false)
-
-const checkMobile = () => {
-  isMobile.value = window.innerWidth <= 640
-}
-
-onMounted(() => {
-  checkMobile()
-  window.addEventListener('resize', checkMobile)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkMobile)
-})
 </script>
 
 <style scoped>
