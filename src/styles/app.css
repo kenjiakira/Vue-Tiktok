@@ -1,0 +1,210 @@
+/* Reset style trước */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  background: linear-gradient(135deg, #ab2664 0%, #2f7f93 100%) fixed !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+}
+
+:root {
+  --z-nav: 1000;
+  --z-mobile-menu: 1100;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+nav {
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: transparent;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.brand-name {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+nav a.router-link-exact-active {
+  color: #ff3b8d;
+  text-shadow: 0 0 10px rgba(255, 59, 141, 0.3);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.close-menu {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 16px;
+  }
+  
+  .nav-right {
+    z-index: var(--z-mobile-menu);
+    bottom: auto; 
+    height: 100vh;
+    width: 100%;
+    display: none;  
+    background: rgba(0, 0, 0, 0.85);  
+    backdrop-filter: blur(12px);    
+  }
+
+  .nav-logo {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .brand-name {
+    font-size: 20px !important;
+  }
+
+  main {
+    padding: 16px;
+    margin-bottom: 60px; 
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .close-menu {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);  
+  }
+
+  .nav-right {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(12px);     
+    padding: 64px 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    z-index: 200;
+  }
+
+  .nav-right.mobile-menu-open {
+    display: flex;
+    animation: slideIn 0.3s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-right a {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95); 
+  }
+
+  main {
+    padding: 16px;
+  }
+}
+
+body.menu-open::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: var(--z-mobile-menu);
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+}

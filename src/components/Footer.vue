@@ -1,0 +1,135 @@
+<template>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="../public/logo.png" alt="TikSave" class="footer-logo-img">
+          <span class="footer-brand">TikSave</span>
+        </div>
+        <p class="footer-description">Download TikTok videos without watermark</p>
+      </div>
+
+      <div class="footer-links">
+        <router-link to="/how-it-works">How It Works</router-link>
+        <router-link to="/faq">FAQ</router-link>
+        <router-link to="/about">About</router-link>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} TikSave · Made by Ngọc Từ With Love ❤️</p>
+    </div>
+  </footer>
+</template>
+
+<script setup lang="ts">
+import { computed } from 'vue';
+const currentYear = computed(() => new Date().getFullYear());
+</script>
+
+<style scoped>
+.footer {
+  margin-top: auto;
+  padding: 24px 32px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo-img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ff3b8d;
+}
+
+.footer-bottom {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 16px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+}
+</style>

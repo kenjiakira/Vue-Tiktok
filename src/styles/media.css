@@ -1,0 +1,228 @@
+.media-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+  grid-template-columns: repeat(2, 1fr); 
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.media-grid:has(.media-item:only-child) {
+  grid-template-columns: minmax(auto, 400px);
+  justify-content: center;
+}
+
+.media-item:only-child {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.media-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: rgba(45, 25, 80, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.media-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.media-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.media-item:hover .overlay {
+  opacity: 1;
+}
+
+.media-item:hover img {
+  transform: scale(1.05);
+}
+
+.image-number {
+  color: white;
+  font-size: 0.9em;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.download-button.ghost {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.download-button.ghost:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.download-button.primary {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.download-button.primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 640px) {
+  .media-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 16px;
+    width: 100%;
+    max-width: 300px; 
+    margin: 16px auto; 
+  }
+
+  .media-item {
+    width: 100%; 
+    aspect-ratio: 1; 
+  }
+
+  .media-grid:has(.media-item:only-child) {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .media-grid {
+    grid-template-columns: unset;
+  }
+
+  .download-button.ghost {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .video-container {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .download-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .image-number {
+    font-size: 0.8em;
+    padding: 2px 6px;
+  }
+
+  .download-button.primary {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 160px;
+  }
+  
+  .mp4-text {
+    display: none;
+  }
+}
+
+.media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(45, 25, 80, 0.4);
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 59, 141, 0.1);
+}
+
+.video-preview {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+  max-height: 80vh; 
+  aspect-ratio: 9/16; 
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .video-preview {
+    max-height: 600px; 
+    width: auto;
+  }
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.download-button.primary {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
