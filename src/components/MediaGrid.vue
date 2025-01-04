@@ -7,12 +7,12 @@
           :src="video"
           class="video-preview"
         ></video>
-        <a :href="video" 
-           download
-           class="download-button primary center-text"
+        <button 
+          class="download-button primary center-text"
+          @click="handleVideoDownload"
         >
           <span class="icon">⭳</span> Download Video <span class="mp4-text">.MP4</span>
-        </a>
+        </button>
       </div>
     </template>
 
@@ -23,17 +23,16 @@
            class="media-item"
         >
           <div class="media-content">
-            <img :src="image" :alt="`Image ${index + 1}`">
+            <img :src="image" :alt="`Image ${index + 1}`" class="preview-image">
             <div class="overlay">
               <span class="image-number">#{{ index + 1 }}</span>
-              <a :href="image" 
-                 download 
-                 class="download-button ghost"
-                 @click.stop
+              <button 
+                class="download-button ghost"
+                @click="$emit('imageClick', image)"
               >
                 <span class="icon">⭳</span>
                 Download
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -55,6 +54,17 @@ const currentMediaType = computed(() => {
   if (props.video) return 'video'
   return null
 })
+
+const handleVideoDownload = () => {
+  if (props.video) {
+    emit('videoClick', props.video);
+  }
+};
+
+const emit = defineEmits<{
+  (e: 'imageClick', url: string): void;
+  (e: 'videoClick', url: string): void;
+}>();
 </script>
 
 <style scoped>
@@ -71,5 +81,13 @@ const currentMediaType = computed(() => {
   opacity: 0.7;
   font-size: 0.9em;
   margin-left: 4px;
+}
+
+.clickable-image {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.clickable-image:hover {
+  opacity: 0.8;
 }
 </style>

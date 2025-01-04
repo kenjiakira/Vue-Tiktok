@@ -3,7 +3,7 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-logo">
-          <img src="../public/logo.png" alt="TikSave" class="footer-logo-img">
+          <img src="/public/logo.png" alt="TikSave" class="footer-logo-img">
           <span class="footer-brand">TikSave</span>
         </div>
         <p class="footer-description">Download TikTok videos without watermark</p>

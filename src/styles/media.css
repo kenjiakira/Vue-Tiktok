@@ -169,6 +169,71 @@
   .mp4-text {
     display: none;
   }
+
+  /* Optimize image loading */
+  .media-item img {
+    content-visibility: auto;
+    contain: paint;
+  }
+
+  /* Simplify hover effects */
+  .media-item:hover img,
+  .media-item:hover .overlay,
+  .download-button:hover {
+    transform: none;
+    opacity: 1;
+  }
+
+  /* Use simpler background */
+  .video-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+  
+  /* Optimize video player */
+  .video-preview {
+    max-height: 400px;
+    contain: strict;
+    content-visibility: auto;
+  }
+
+  /* Bỏ tất cả hiệu ứng hover trên mobile */
+  .media-item:hover .overlay {
+    opacity: 1;
+    transform: none;
+  }
+
+  .overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: none;
+  }
+
+  .media-item:hover img,
+  .download-button:hover,
+  .download-button.ghost:hover,
+  .download-button.primary:hover {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+
+  /* Thay thế hiệu ứng hover bằng active state */
+  .download-button:active,
+  .download-button.ghost:active,
+  .download-button.primary:active {
+    opacity: 0.7;
+  }
+
+  /* Đơn giản hóa giao diện */
+  .video-container {
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .media-item {
+    transition: none;
+  }
 }
 
 .media-container {

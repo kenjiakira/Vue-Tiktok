@@ -1,4 +1,4 @@
-// Types for TikTok API response
+
 export interface TikTokAuthor {
   nickname: string;
   unique_id: string;
@@ -35,7 +35,6 @@ export interface TikTokResponse {
   };
 }
 
-// Types for download history
 export interface DownloadHistoryItem {
   url: string;
   type: 'video' | 'image' | 'audio';
