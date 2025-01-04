@@ -18,12 +18,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@distube/ytdl-core": "^4.15.8",
     "@heroicons/vue": "^2.2.0",
     "@types/leaflet": "^1.9.15",
     "axios": "^1.7.9",
     "leaflet": "^1.9.4",
     "vue": "^3.3.4",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "yt-search": "^2.12.1"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
