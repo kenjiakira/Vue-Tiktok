@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -10,13 +9,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       'leaflet': 'leaflet'
     },
-  },
-  css: {
-    preprocessorOptions: {
-      css: {
-        additionalData: '@import "leaflet/dist/leaflet.css";'
-      }
-    }
   },
   build: {
     target: 'esnext',
@@ -34,6 +26,7 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['leaflet']
+    include: ['leaflet'],
+    exclude: []
   }
 })
