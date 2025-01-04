@@ -1,9 +1,9 @@
+import 'leaflet/dist/leaflet.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import './assets/main.css'
-import 'leaflet/dist/leaflet.css'; // Import CSS của leaflet
 
 const app = createApp(App)
 

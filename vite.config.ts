@@ -8,8 +8,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'leaflet': 'leaflet/dist/leaflet.js'
+      'leaflet': 'leaflet'
     },
+  },
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: '@import "leaflet/dist/leaflet.css";'
+      }
+    }
   },
   build: {
     target: 'esnext',
