@@ -59,13 +59,13 @@ nav {
 }
 
 .nav-logo {
-  width: 40px;
-  height: 40px;
-  margin-right: -10px;
+  width: 48px;  /* Tăng từ 40px */
+  height: 48px; /* Tăng từ 40px */
+  margin-right: -8px;
 }
 
 .brand-name {
-  font-size: 24px !important;
+  font-size: 28px !important; /* Tăng từ 24px */
   font-weight: 700 !important;
   background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
   -webkit-background-clip: text;
@@ -134,12 +134,12 @@ nav a.router-link-exact-active {
   }
 
   .nav-logo {
-    width: 24px;
-    height: 24px;
+    width: 32px;  
+    height: 32px; 
   }
   
   .brand-name {
-    font-size: 20px !important;
+    font-size: 24px !important; 
   }
 
   main {

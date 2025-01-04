@@ -58,12 +58,12 @@ const currentYear = computed(() => new Date().getFullYear());
 }
 
 .footer-logo-img {
-  width: 24px;
-  height: 24px;
+  width: 32px;  
+  height: 32px;
 }
 
 .footer-brand {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
   -webkit-background-clip: text;
@@ -137,6 +137,15 @@ const currentYear = computed(() => new Date().getFullYear());
   .footer-bottom {
     margin-top: 12px;
     padding-top: 12px;
+  }
+
+  .footer-logo-img {
+    width: 28px;  
+    height: 28px;
+  }
+  
+  .footer-brand {
+    font-size: 20px;
   }
 
   .disclaimer {

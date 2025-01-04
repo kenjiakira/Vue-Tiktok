@@ -9,7 +9,7 @@
         ></video>
         <button 
           class="download-button primary center-text"
-          @click="handleVideoDownload"
+          @click="video && $emit('downloadVideo', video)"
         >
           <span class="icon">⭳</span> Download Video <span class="mp4-text">.MP4</span>
         </button>
@@ -28,7 +28,7 @@
               <span class="image-number">#{{ index + 1 }}</span>
               <button 
                 class="download-button ghost"
-                @click="$emit('imageClick', image)"
+                @click="$emit('downloadImage', image)"
               >
                 <span class="icon">⭳</span>
                 Download
@@ -55,15 +55,9 @@ const currentMediaType = computed(() => {
   return null
 })
 
-const handleVideoDownload = () => {
-  if (props.video) {
-    emit('videoClick', props.video);
-  }
-};
-
-const emit = defineEmits<{
-  (e: 'imageClick', url: string): void;
-  (e: 'videoClick', url: string): void;
+defineEmits<{
+  (e: 'downloadImage', url: string): void
+  (e: 'downloadVideo', url: string): void
 }>();
 </script>
 

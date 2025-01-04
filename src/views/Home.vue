@@ -5,7 +5,7 @@
       <div class="input-container">
         <div class="input-wrapper">
           <Button 
-            @click="pasteFromClipboard"
+            @click="handlePaste"
             variant="paste"
             :icon-component="ClipboardIcon"
           />
@@ -36,8 +36,8 @@
         <MediaGrid 
           :video="videoData.play"
           :images="videoData.images" 
-          @image-click="downloadImage"
-          @video-click="handleVideoClick" 
+          @download-image="handleMediaDownload.image"
+          @download-video="handleMediaDownload.video" 
         />
       </div>
 
@@ -48,32 +48,40 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { downloadTikTok } from '@/services/tiktokService';
-import { downloadFile } from '@/utils/download';
+import { usePaste } from '@/utils/usePaste';
+import { useVideoDownload } from '@/utils/useVideoDownload';
 import MediaGrid from '@/components/MediaGrid.vue';
 import Button from '@/components/Button.vue';
 import Input from '@/components/Input.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
-import { ArrowDownTrayIcon, ClipboardIcon } from '@heroicons/vue/24/outline'
-import { isTikTokUrl } from '@/utils/validation';
+import { ArrowDownTrayIcon, ClipboardIcon } from '@heroicons/vue/24/outline';
 
 const windowWidth = ref(window.innerWidth);
 const tiktokUrl = ref('');
+const { error: pasteError, pasteFromClipboard } = usePaste();
+const { 
+  loading, 
+  error, 
+  videoData, 
+  downloadVideo: startDownload,
+  handleMediaDownload 
+} = useVideoDownload();
 
 const updateWidth = () => {
   windowWidth.value = window.innerWidth;
 };
 
-const pasteFromClipboard = async () => {
-  try {
-    const text = await navigator.clipboard.readText();
+const handlePaste = async () => {
+  const text = await pasteFromClipboard();
+  if (text) {
     tiktokUrl.value = text;
-  } catch (err) {
-    error.value = "Unable to paste from clipboard";
-    hideError();
   }
 };
-  
+
+const downloadVideo = () => {
+  startDownload(tiktokUrl.value);
+};
+
 onMounted(() => {
   window.addEventListener('resize', updateWidth);
 });
@@ -81,81 +89,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', updateWidth);
 });
-const loading = ref(false);
-const error = ref('');
-const videoData = ref<any>(null);
+</script>
 
-const hideError = () => {
-  setTimeout(() => {
-    error.value = '';
-  }, 5000);
-}
-
-const downloadMedia = async (url: string, type: string) => {
-  try {
-    const filename = `tiktok_${type}_${Date.now()}.${type === 'video' ? 'mp4' : 'jpg'}`;
-    await downloadFile(url, filename);
-  } catch (err) {
-    error.value = 'Download failed';
-    hideError();
-  }
-};
-
-const downloadImage = async (imageUrl: string) => {
-  try {
-    await downloadMedia(imageUrl, 'image');
-  } catch (err) {
-    error.value = 'Image download failed';
-    hideError();
-  }
-};
-
-const handleVideoClick = async (videoUrl: string) => {
-  try {
-    await downloadMedia(videoUrl, 'video');
-  } catch (err) {
-    error.value = 'Video download failed';
-    hideError();
-  }
-};
-
-const checkTikTokUrl = (url: string): Promise<boolean> => {
-  return new Promise((resolve) => {
-    // Tăng delay lên 10 giây cho validation URL
-    setTimeout(() => {
-      resolve(isTikTokUrl(url));
-    }, 10000);
-  });
-};
-
-const downloadVideo = async () => {
-  if (!tiktokUrl.value) return;
-  
-  loading.value = true;
-  error.value = '';
-  videoData.value = null;
-
-  try {
-    const [isValid] = await Promise.all([
-      checkTikTokUrl(tiktokUrl.value),
-      // Minimum loading time cũng tăng lên 10 giây
-      new Promise(resolve => setTimeout(resolve, 10000))
-    ]);
-
-    if (!isValid) {
-      error.value = 'Invalid TikTok URL';
-      hideError();
-      return;
-    }
-
-    const data = await downloadTikTok(tiktokUrl.value);
-    videoData.value = data;
-  } catch (err) {
-    error.value = err instanceof Error ? err.message : 'An error occurred';
-    hideError();
-    videoData.value = null;
-  } finally {
-    loading.value = false;
-  }
-};
-</script><style scoped>@import "../styles/home.css";.content {  display: flex;  flex-direction: column;  gap: 24px;    padding: 0 16px;}.w-3 {  width: 12px;  height: 12px;}</style>
+<style scoped>@import "../styles/home.css";.content {  display: flex;  flex-direction: column;  gap: 24px;    padding: 0 16px;}.w-3 {  width: 12px;  height: 12px;}</style>
