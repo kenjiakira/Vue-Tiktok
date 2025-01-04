@@ -1,12 +1,13 @@
 <template>
   <div class="faq">
     <h1>Frequently Asked Questions</h1>
-    <div class="faq-list"></div>
+    <div class="faq-list">
       <div class="faq-item" v-for="(item, index) in faqItems" :key="index">
         <h3>{{ item.question }}</h3>
         <p>{{ item.answer }}</p>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -32,67 +33,65 @@ const faqItems = [
 
 <style scoped>
 .faq {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  width: min(800px, 100%);
+  margin: clamp(24px, 5vw, 40px) auto;
+  padding: 0 max(16px, 2vw);
 }
 
 .faq-list {
-  margin-top: 48px; 
-  display: grid;
-  gap: 48px; 
+  margin-top: clamp(32px, 5vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .faq-item {
-  margin-bottom: 0;
-  padding: 36px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: clamp(24px, 4vw, 36px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  isolation: isolate;
+  margin-bottom: 4px;
 }
 
-.faq-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+@media (hover: hover) {
+  .faq-item {
+    transition: transform 0.2s ease;
+  }
+  
+  .faq-item:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .faq-item h3 {
   color: #fff;
-  margin-bottom: 24px; 
-  font-size: 20px;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  font-size: clamp(18px, 2vw, 20px);
   font-weight: 600;
-  background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
+  background: linear-gradient(135deg, #ff3b8d, #ff71b3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .faq-item p {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin: 0;
-  font-size: 16px;
+  line-height: 1.6;
+  font-size: clamp(15px, 1.6vw, 16px);
 }
 
 @media (max-width: 640px) {
-  .faq {
-    margin: 32px auto;
-  }
-
-  .faq-list {
-    gap: 32px;
-  }
-  
   .faq-item {
-    padding: 28px;
-    transition: none; 
-  }
-
-  .faq-item:hover {
-    transform: none;  
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 </style>

@@ -20,7 +20,7 @@
       <div class="section">
         <h2>Contact</h2>
         <p>If you have any questions or concerns, feel free to reach out to us:</p>
-        <a href="mailto:support@example.com" class="contact-link">support@example.com</a>
+        <a href="mailto:kenjiakistudio@.com" class="contact-link">kenjiakistudio@gmail.com</a>
       </div>
     </div>
   </div>
