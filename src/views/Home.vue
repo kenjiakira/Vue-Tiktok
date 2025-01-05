@@ -37,6 +37,7 @@
           :video="videoData.play"
           :images="videoData.images" 
           :downloading="downloading"
+          :videoId="videoData.id"
           @download-image="handleMediaDownload.image"
           @download-video="handleMediaDownload.video" 
         />
@@ -72,20 +73,20 @@ const {
 } = useVideoDownload();
 
 const handleMediaDownload = {
-  video: async (url: string) => {
+  video: async (url: string, id: string) => {
     downloading.value = true;
     try {
-      await downloadFile(url, 'tiktok-video.mp4');
+      await downloadFile(url, `savetik_${id}.mp4`);
     } catch (error) {
       console.error('Download failed:', error);
     } finally {
       downloading.value = false;
     }
   },
-  image: async (url: string) => {
+  image: async (url: string, id: string, index: number) => {
     downloading.value = true;
     try {
-      await downloadFile(url, 'tiktok-image.jpg');
+      await downloadFile(url, `savetik_${id}_${index + 1}.jpg`);
     } catch (error) {
       console.error('Download failed:', error);
     } finally {

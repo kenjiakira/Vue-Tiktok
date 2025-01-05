@@ -2,11 +2,11 @@ import axios from 'axios';
 import type { TikTokResponse } from '@/types';
 
 const api = axios.create({
-  timeout: 5000, 
+  timeout: 3000, // Reduced from 5000 to 3000ms
   baseURL: 'https://www.tikwm.com/api/'
 });
 
-export async function downloadTikTok(url: string, retryCount = 2) {
+export async function downloadTikTok(url: string, retryCount = 3) { // Increased retry count
   try {
     const response = await api.post<TikTokResponse>('', { url });
     
@@ -19,9 +19,9 @@ export async function downloadTikTok(url: string, retryCount = 2) {
 
   } catch (error) {
     if (axios.isAxiosError(error)) {
-    
       if (retryCount > 0 && (error.code === 'ECONNABORTED' || !error.response)) {
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Reduced retry delay from 500ms to 200ms
+        await new Promise(resolve => setTimeout(resolve, 200));
         return downloadTikTok(url, retryCount - 1);
       }
 

@@ -9,7 +9,7 @@
         ></video>
         <button 
           class="download-button primary center-text"
-          @click="video && $emit('downloadVideo', video)"
+          @click="video && $emit('downloadVideo', video, videoId)"
           :disabled="downloading"
         >
           <i v-if="!downloading" class="fas fa-download"></i>
@@ -31,7 +31,7 @@
               <span class="image-number">#{{ index + 1 }}</span>
               <button 
                 class="download-button ghost"
-                @click="$emit('downloadImage', image)"
+                @click="$emit('downloadImage', image, videoId, index)"
               >
                 <i class="fas fa-download"></i>
                 Download
@@ -50,7 +50,8 @@ import { computed } from 'vue'
 const props = defineProps<{
   images?: string[]
   video?: string
-  downloading?: boolean // Thêm prop mới
+  downloading?: boolean
+  videoId: string  // Add new prop for video ID
 }>();
 
 const currentMediaType = computed(() => {
@@ -60,8 +61,8 @@ const currentMediaType = computed(() => {
 })
 
 defineEmits<{
-  (e: 'downloadImage', url: string): void
-  (e: 'downloadVideo', url: string): void
+  (e: 'downloadImage', url: string, id: string, index: number): void
+  (e: 'downloadVideo', url: string, id: string): void
 }>();
 </script>
 

@@ -14,9 +14,15 @@ export function useVideoDownload() {
     }, 5000);
   }
 
-  const downloadMediaFile = async (url: string, type: string) => {
+  const downloadMediaFile = async (url: string, type: string, id?: string, index?: number) => {
     try {
-      const filename = `tiktok_${type}_${Date.now()}.${type === 'video' ? 'mp4' : 'jpg'}`;
+      let filename = '';
+      if (type === 'video') {
+        filename = `savetik_${id}.mp4`;
+      } else {
+        const imageIndex = typeof index === 'number' ? index : 0;
+        filename = `savetik_${id}_${imageIndex + 1}.jpg`;
+      }
       await downloadFile(url, filename);
     } catch (err) {
       error.value = `${type.charAt(0).toUpperCase() + type.slice(1)} download failed`;
@@ -25,15 +31,16 @@ export function useVideoDownload() {
   };
 
   const handleMediaDownload = {
-    image: (url: string) => downloadMediaFile(url, 'image'),
-    video: (url: string) => downloadMediaFile(url, 'video')
+
+    image: (url: string, id: string, index: number) => downloadMediaFile(url, 'image', id, index),
+    video: (url: string, id: string) => downloadMediaFile(url, 'video', id)
   };
 
   const checkTikTokUrl = (url: string): Promise<boolean> => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(isTikTokUrl(url));
-      }, 10000);
+      }, 3000); // Reduced from 10000 to 3000ms
     });
   };
 
@@ -47,7 +54,7 @@ export function useVideoDownload() {
     try {
       const [isValid] = await Promise.all([
         checkTikTokUrl(tiktokUrl),
-        new Promise(resolve => setTimeout(resolve, 10000))
+        new Promise(resolve => setTimeout(resolve, 3000)) // Reduced from 10000 to 3000ms
       ]);
 
       if (!isValid) {
