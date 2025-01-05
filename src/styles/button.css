@@ -15,6 +15,35 @@
 
 .button.loading {
   cursor: wait;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(270deg, #ff3b8d, #ff71b3, #ff3b8d);
+  background-size: 200% 100%;
+  animation: loadingGradient 2s ease infinite;
+  border: none;
+  color: white;
+}
+
+.button.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes loadingShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .button.submit {
@@ -153,5 +182,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .button[disabled] {
+    background: rgba(102, 102, 102, 0.8) !important;
+    opacity: 0.8;
+    color: white;
+  }
+
+  .button[disabled]:active {
+    transform: none;
+  }
+
+  .button[disabled] .fa-spinner::before {
+    content: "•••";
+  }
+
+  .fa-spin {
+    animation: none;
+  }
+
+  .button.loading {
+    background-size: 300% 100%;
+  }
+
+  .button.submit.loading {
+    background: linear-gradient(270deg, #ff3b8d, #ff71b3, #ff3b8d);
+    background-size: 300% 100%;
+    animation: loadingGradient 2s ease infinite;
+  }
+}
+
+@media (min-width: 641px) {
+  .fa-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }

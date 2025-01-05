@@ -29,11 +29,11 @@
       
       <div class="feature">
         <div class="feature-icon-wrapper">
-          <div class="feature-icon">🎵</div>
+          <div class="feature-icon">🚀</div>
         </div>
         <div class="feature-content">
-          <h3>MP4 and MP3 Support</h3>
-          <p>Save your favorite TikTok videos in high-quality MP4 format or convert them to MP3 audio files for various uses.</p>
+          <h3>Fast Downloads</h3>
+          <p>Download TikTok videos instantly in high-quality formats, ensuring a seamless and effortless experience. No waiting time, no registration required.</p>
         </div>
       </div>
     </div>

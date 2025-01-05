@@ -10,8 +10,11 @@
         <button 
           class="download-button primary center-text"
           @click="video && $emit('downloadVideo', video)"
+          :disabled="downloading"
         >
-          <i class="fas fa-download"></i> Download Video <span class="mp4-text">.MP4</span>
+          <i v-if="!downloading" class="fas fa-download"></i>
+          <span v-else class="loading-dots">...</span>
+          Download Video <span class="mp4-text">.MP4</span>
         </button>
       </div>
     </template>
@@ -47,6 +50,7 @@ import { computed } from 'vue'
 const props = defineProps<{
   images?: string[]
   video?: string
+  downloading?: boolean // Thêm prop mới
 }>();
 
 const currentMediaType = computed(() => {
@@ -62,8 +66,15 @@ defineEmits<{
 </script>
 
 <style scoped>
-@import "../styles/media.css"; 
+@import "../styles/media.css";
 
+.loading-dots {
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Remove duplicate styles that are already in media.css */
 .center-text {
   justify-content: center;
   margin: 0 auto;
@@ -77,11 +88,14 @@ defineEmits<{
   margin-left: 4px;
 }
 
-.clickable-image {
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.clickable-image:hover {
-  opacity: 0.8;
+@media (max-width: 640px) {
+  .mp4-text {
+    display: none;
+  }
+  
+  .loading-dots {
+    font-size: 18px;
+    line-height: 0;
+  }
 }
 </style>

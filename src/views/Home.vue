@@ -36,6 +36,7 @@
         <MediaGrid 
           :video="videoData.play"
           :images="videoData.images" 
+          :downloading="downloading"
           @download-image="handleMediaDownload.image"
           @download-video="handleMediaDownload.video" 
         />
@@ -51,6 +52,7 @@ import { ref, onMounted, onUnmounted, watch } from 'vue';
 import { extractTikTokUrl } from '@/utils/urlExtractor';
 import { usePaste } from '@/utils/usePaste';
 import { useVideoDownload } from '@/utils/useVideoDownload';
+import { downloadFile } from '@/utils/download';
 import MediaGrid from '@/components/MediaGrid.vue';
 import Button from '@/components/Button.vue';
 import Input from '@/components/Input.vue';
@@ -60,14 +62,37 @@ import { ArrowDownTrayIcon, ClipboardIcon } from '@heroicons/vue/24/outline';
 const windowWidth = ref(window.innerWidth);
 const tiktokUrl = ref('');
 const processedUrl = ref('');
+const downloading = ref(false);
 const { error: pasteError, pasteFromClipboard } = usePaste();
 const { 
   loading, 
   error, 
   videoData, 
   downloadVideo: startDownload,
-  handleMediaDownload 
 } = useVideoDownload();
+
+const handleMediaDownload = {
+  video: async (url: string) => {
+    downloading.value = true;
+    try {
+      await downloadFile(url, 'tiktok-video.mp4');
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      downloading.value = false;
+    }
+  },
+  image: async (url: string) => {
+    downloading.value = true;
+    try {
+      await downloadFile(url, 'tiktok-image.jpg');
+    } catch (error) {
+      console.error('Download failed:', error);
+    } finally {
+      downloading.value = false;
+    }
+  }
+};
 
 watch(tiktokUrl, (newValue) => {
   const extractedUrl = extractTikTokUrl(newValue);
