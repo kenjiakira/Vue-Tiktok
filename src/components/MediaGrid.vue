@@ -11,7 +11,7 @@
           class="download-button primary center-text"
           @click="video && $emit('downloadVideo', video)"
         >
-          <span class="icon">⭳</span> Download Video <span class="mp4-text">.MP4</span>
+          <i class="fas fa-download"></i> Download Video <span class="mp4-text">.MP4</span>
         </button>
       </div>
     </template>
@@ -30,7 +30,7 @@
                 class="download-button ghost"
                 @click="$emit('downloadImage', image)"
               >
-                <span class="icon">⭳</span>
+                <i class="fas fa-download"></i>
                 Download
               </button>
             </div>

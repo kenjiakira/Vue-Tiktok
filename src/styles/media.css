@@ -234,6 +234,31 @@
   .media-item {
     transition: none;
   }
+
+  .media-container {
+    margin: 0 -12px;
+  }
+
+  .video-container {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-preview {
+    border-radius: 0;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .download-button {
+    padding: 12px 16px;
+    width: calc(100% - 24px);
+    margin: 12px;
+  }
 }
 
 .media-container {

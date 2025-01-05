@@ -48,4 +48,27 @@ main {
   flex: 1;
   width: 100%;
 }
+
+.close-menu {
+  font-size: 32px;  
+  width: 44px;     
+  height: 44px;    
+  position: absolute;
+  right: 16px;     
+  top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (min-width: 641px) {
+  .close-menu {
+    display: none;
+  }
+}
 </style>
