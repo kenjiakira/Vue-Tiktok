@@ -3,8 +3,8 @@
     <div class="app-container">
       <nav>
         <div class="nav-left">
-          <img src="../public/logo.png" alt="TikSave" class="nav-logo">
-          <router-link to="/" class="brand-name">TikSave</router-link>
+          <img src="../public/logo.png" alt="SaveTik" class="nav-logo">
+          <router-link to="/" class="brand-name">SaveTik</router-link>
         </div>
         <button class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
           <span class="menu-icon">☰</span>

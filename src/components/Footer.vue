@@ -3,8 +3,8 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-logo">
-          <img src="/public/logo.png" alt="TikSave" class="footer-logo-img">
-          <span class="footer-brand">TikSave</span>
+          <img src="/public/logo.png" alt="SaveTik" class="footer-logo-img">
+          <span class="footer-brand">SaveTik</span>
         </div>
         <p class="footer-description">Download TikTok videos without watermark</p>
       </div>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} TikSave · Made by Ngọc Từ With Love ❤️</p>
+      <p>&copy; {{ currentYear }} SaveTik · Made by Ngọc Từ With Love ❤️</p>
       <p class="disclaimer">This product is not associated with, sponsored by, or endorsed by TikTok or any of its affiliates.</p>
     </div>
   </footer>

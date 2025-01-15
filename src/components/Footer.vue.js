@@ -22,7 +22,7 @@ function __VLS_template() {
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({
         src: ("/public/logo.png"),
-        alt: ("TikSave"),
+        alt: ("SaveTik"),
         ...{ class: ("footer-logo-img") },
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.span, __VLS_intrinsicElements.span)({

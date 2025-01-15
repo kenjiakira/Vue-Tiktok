@@ -13,7 +13,7 @@
         </div>
         <div class="feature-content">
           <h3>Unlimited Downloads</h3>
-          <p>Experience unrestricted video downloads with TikSave. No constraints, just limitless content available for you.</p>
+          <p>Experience unrestricted video downloads with SaveTik. No constraints, just limitless content available for you.</p>
         </div>
       </div>
       
@@ -23,7 +23,7 @@
         </div>
         <div class="feature-content">
           <h3>Eliminate the Watermark</h3>
-          <p>Effortlessly get rid of annoying TikTok symbols from your downloaded videos. Say goodbye to watermarks with TikSave.</p>
+          <p>Effortlessly get rid of annoying TikTok symbols from your downloaded videos. Say goodbye to watermarks with SaveTik.</p>
         </div>
       </div>
       

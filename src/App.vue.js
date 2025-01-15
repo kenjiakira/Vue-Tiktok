@@ -19,7 +19,7 @@ function __VLS_template() {
     });
     __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({
         src: ("../public/logo.png"),
-        alt: ("TikSave"),
+        alt: ("Savetik"),
         ...{ class: ("nav-logo") },
     });
     const __VLS_0 = {}.RouterLink;
