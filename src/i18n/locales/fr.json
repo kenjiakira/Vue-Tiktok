@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "faq": "FAQ",
+    "about": "À propos"
+  },
+  "footer": {
+    "description": "Télécharger des vidéos TikTok sans filigrane",
+    "copyright": "Créé par Ngọc Từ avec amour ❤️",
+    "disclaimer": "Ce produit n'est pas associé, sponsorisé ou approuvé par TikTok ou ses sociétés affiliées."
+  },
+  "features": {
+    "title": "Téléchargez des vidéos TT gratuitement avec notre outil",
+    "unlimited": {
+      "title": "Téléchargements illimités",
+      "description": "Profitez de téléchargements vidéo sans restriction avec SaveTik. Aucune contrainte, juste du contenu illimité pour vous."
+    },
+    "watermark": {
+      "title": "Supprimer le filigrane",
+      "description": "Éliminez facilement les symboles TikTok gênants de vos vidéos téléchargées."
+    },
+    "fast": {
+      "title": "Téléchargements rapides",
+      "description": "Téléchargez des vidéos TikTok instantanément en haute qualité, garantissant une expérience fluide."
+    }
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "Étapes simples pour télécharger",
+    "steps": [
+      "Copiez l'URL de la vidéo TikTok",
+      "Collez-la dans le champ de saisie",
+      "Cliquez sur le bouton de téléchargement",
+      "Sauvegardez votre vidéo"
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "question": "Ce service est-il gratuit ?",
+        "answer": "Oui, notre outil de téléchargement TikTok est totalement gratuit."
+      },
+      {
+        "question": "Quelle qualité vidéo puis-je télécharger ?",
+        "answer": "Nous fournissons la meilleure qualité disponible de la vidéo TikTok originale."
+      },
+      {
+        "question": "Puis-je télécharger des vidéos privées ?",
+        "answer": "Non, vous pouvez uniquement télécharger des vidéos TikTok publiques."
+      },
+      {
+        "question": "Y a-t-il une limite au nombre de vidéos téléchargeables ?",
+        "answer": "Actuellement, il n'y a pas de limites strictes, mais veuillez utiliser le service de manière responsable."
+      }
+    ]
+  },
+  "about": {
+    "title": "À propos de notre service",
+    "whatWeDo": {
+      "title": "Ce que nous faisons",
+      "description": "Nous proposons une solution simple et efficace pour télécharger des vidéos TikTok. Notre service est conçu pour être convivial et fiable."
+    },
+    "features": {
+      "title": "Fonctionnalités",
+      "items": [
+        "Téléchargements rapides",
+        "Pas d'inscription requise",
+        "Vidéos haute qualité",
+        "Interface simple"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter :"
+    }
+  }
+}

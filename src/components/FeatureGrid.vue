@@ -1,19 +1,14 @@
 <template>
   <div v-if="!hideFeatures">
-    <h2 class="features-heading">
-      Save TT Videos For<br class="mobile-break"> 
-      <span class="highlight">&amp;</span><br class="mobile-break">
-      Free using our<br class="mobile-break"> 
-      TikTok Video Downloader
-    </h2>
+    <h2 class="features-heading">{{ $t('features.title') }}</h2>
     <div class="features-grid">
       <div class="feature">
         <div class="feature-icon-wrapper">
           <div class="feature-icon">⚡</div>
         </div>
         <div class="feature-content">
-          <h3>Unlimited Downloads</h3>
-          <p>Experience unrestricted video downloads with SaveTik. No constraints, just limitless content available for you.</p>
+          <h3>{{ $t('features.unlimited.title') }}</h3>
+          <p>{{ $t('features.unlimited.description') }}</p>
         </div>
       </div>
       
@@ -22,8 +17,8 @@
           <div class="feature-icon">🎯</div>
         </div>
         <div class="feature-content">
-          <h3>Eliminate the Watermark</h3>
-          <p>Effortlessly get rid of annoying TikTok symbols from your downloaded videos. Say goodbye to watermarks with SaveTik.</p>
+          <h3>{{ $t('features.watermark.title') }}</h3>
+          <p>{{ $t('features.watermark.description') }}</p>
         </div>
       </div>
       
@@ -32,8 +27,8 @@
           <div class="feature-icon">🚀</div>
         </div>
         <div class="feature-content">
-          <h3>Fast Downloads</h3>
-          <p>Download TikTok videos instantly in high-quality formats, ensuring a seamless and effortless experience. No waiting time, no registration required.</p>
+          <h3>{{ $t('features.fast.title') }}</h3>
+          <p>{{ $t('features.fast.description') }}</p>
         </div>
       </div>
     </div>

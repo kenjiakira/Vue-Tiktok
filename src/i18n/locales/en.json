@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "howItWorks": "How It Works",
+    "faq": "FAQ",
+    "about": "About"
+  },
+  "footer": {
+    "description": "Download TikTok videos without watermark",
+    "copyright": "Made by Ngọc Từ With Love ❤️",
+    "disclaimer": "This product is not associated with, sponsored by, or endorsed by TikTok or any of its affiliates."
+  },
+  "features": {
+    "title": "Save TT Videos For Free using our TikTok Video Downloader",
+    "unlimited": {
+      "title": "Unlimited Downloads",
+      "description": "Experience unrestricted video downloads with SaveTik. No constraints, just limitless content available for you."
+    },
+    "watermark": {
+      "title": "Eliminate the Watermark",
+      "description": "Effortlessly get rid of annoying TikTok symbols from your downloaded videos."
+    },
+    "fast": {
+      "title": "Fast Downloads",
+      "description": "Download TikTok videos instantly in high-quality formats, ensuring a seamless and effortless experience."
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Simple Steps to Download",
+    "steps": [
+      "Copy the TikTok video URL",
+      "Paste it in the input field",
+      "Click download button",
+      "Save your video"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "Is this service free?",
+        "answer": "Yes, our TikTok downloader is completely free to use."
+      },
+      {
+        "question": "What video quality can I download?",
+        "answer": "We provide the highest quality available from the original TikTok video."
+      },
+      {
+        "question": "Can I download private videos?",
+        "answer": "No, you can only download public TikTok videos."
+      },
+      {
+        "question": "Is there a limit to how many videos I can download?",
+        "answer": "Currently there are no strict limits, but please use the service responsibly."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Our Service",
+    "whatWeDo": {
+      "title": "What We Do",
+      "description": "We provide a simple and efficient way to download TikTok videos. Our service is designed to be user-friendly and reliable."
+    },
+    "features": {
+      "title": "Features",
+      "items": [
+        "Fast downloads",
+        "No registration required",
+        "High quality videos",
+        "Simple interface"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "If you have any questions or concerns, feel free to reach out to us:"
+    }
+  }
+}

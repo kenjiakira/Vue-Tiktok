@@ -1,34 +1,42 @@
 <template>
   <div class="faq">
-    <h1>Frequently Asked Questions</h1>
+    <h1>{{ $t('faq.title') }}</h1>
     <div class="faq-list">
-      <div class="faq-item" v-for="(item, index) in faqItems" :key="index">
-        <h3>{{ item.question }}</h3>
-        <p>{{ item.answer }}</p>
+      <div v-for="(item, index) in faqList" 
+           :key="index"
+           class="faq-item">
+        <h3>{{ $t(`faq.items[${index}].question`) }}</h3>
+        <p>{{ $t(`faq.items[${index}].answer`) }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const faqItems = [
-  {
-    question: "Is this service free?",
-    answer: "Yes, our TikTok downloader is completely free to use."
-  },
-  {
-    question: "What video quality can I download?",
-    answer: "We provide the highest quality available from the original TikTok video."
-  },
-  {
-    question: "Can I download private videos?",
-    answer: "No, you can only download public TikTok videos."
-  },
-  {
-    question: "Is there a limit to how many videos I can download?",
-    answer: "Currently there are no strict limits, but please use the service responsibly."
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+// Định nghĩa interface cho FAQ item
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqList = computed<FAQItem[]>(() => {
+  try {
+    // Lấy số lượng items từ i18n
+    const items = Array.from({ length: 4 }, (_, index) => ({
+      question: t(`faq.items.${index}.question`),
+      answer: t(`faq.items.${index}.answer`)
+    }));
+    return items;
+  } catch (error) {
+    console.error('Error loading FAQ items:', error);
+    return [];
   }
-];
+});
 </script>
 
 <style scoped>

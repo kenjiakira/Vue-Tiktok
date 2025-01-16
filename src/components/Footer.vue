@@ -6,18 +6,18 @@
           <img src="/public/logo.png" alt="SaveTik" class="footer-logo-img">
           <span class="footer-brand">SaveTik</span>
         </div>
-        <p class="footer-description">Download TikTok videos without watermark</p>
+        <p class="footer-description">{{ $t('footer.description') }}</p>
       </div>
 
       <div class="footer-links">
-        <router-link to="/how-it-works">How It Works</router-link>
-        <router-link to="/faq">FAQ</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/how-it-works">{{ $t('nav.howItWorks') }}</router-link>
+        <router-link to="/faq">{{ $t('nav.faq') }}</router-link>
+        <router-link to="/about">{{ $t('nav.about') }}</router-link>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} SaveTik · Made by Ngọc Từ With Love ❤️</p>
-      <p class="disclaimer">This product is not associated with, sponsored by, or endorsed by TikTok or any of its affiliates.</p>
+      <p>&copy; {{ currentYear }} SaveTik · {{ $t('footer.copyright') }}</p>
+      <p class="disclaimer">{{ $t('footer.disclaimer') }}</p>
     </div>
   </footer>
 </template>

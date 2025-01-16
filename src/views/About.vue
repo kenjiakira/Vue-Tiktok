@@ -1,30 +1,35 @@
 <template>
   <div class="about">
-    <h1>About Our Service</h1>
+    <h1>{{ $t('about.title') }}</h1>
     <div class="content">
       <div class="section">
-        <h2>What We Do</h2>
-        <p>We provide a simple and efficient way to download TikTok videos. Our service is designed to be user-friendly and reliable.</p>
+        <h2>{{ $t('about.whatWeDo.title') }}</h2>
+        <p>{{ $t('about.whatWeDo.description') }}</p>
       </div>
 
       <div class="section">
-        <h2>Features</h2>
+        <h2>{{ $t('about.features.title') }}</h2>
         <ul>
-          <li>Fast downloads</li>
-          <li>No registration required</li>
-          <li>High quality videos</li>
-          <li>Simple interface</li>
+          <li v-for="index in 4" :key="index">
+            {{ $t(`about.features.items.${index - 1}`) }}
+          </li>
         </ul>
       </div>
 
       <div class="section">
-        <h2>Contact</h2>
-        <p>If you have any questions or concerns, feel free to reach out to us:</p>
-        <a href="mailto:kenjiakistudio@.com" class="contact-link">kenjiakistudio@gmail.com</a>
+        <h2>{{ $t('about.contact.title') }}</h2>
+        <p>{{ $t('about.contact.description') }}</p>
+        <a href="mailto:kenjiakistudio@gmail.com" class="contact-link">kenjiakistudio@gmail.com</a>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+</script>
 
 <style scoped>
 .about {

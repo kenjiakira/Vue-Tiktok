@@ -1,17 +1,23 @@
 <template>
   <div class="how-it-works">
-    <h1>How It Works</h1>
+    <h1>{{ $t('howItWorks.title') }}</h1>
     <div class="content">
-      <h2>Simple Steps to Download</h2>
+      <h2>{{ $t('howItWorks.subtitle') }}</h2>
       <div class="steps">
-        <div class="step" v-for="(step, index) in ['Copy the TikTok video URL', 'Paste it in the input field', 'Click download button', 'Save your video']" :key="index">
-          <div class="step-number">{{ index + 1 }}</div>
-          <p>{{ step }}</p>
+        <div class="step" v-for="index in 4" :key="index">
+          <div class="step-number">{{ index }}</div>
+          <p>{{ $t(`howItWorks.steps.${index - 1}`) }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+</script>
 
 <style scoped>
 .how-it-works {

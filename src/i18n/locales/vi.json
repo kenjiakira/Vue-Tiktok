@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "howItWorks": "Hướng Dẫn",
+    "faq": "Hỏi Đáp",
+    "about": "Giới Thiệu"
+  },
+  "footer": {
+    "description": "Tải video TikTok không có logo",
+    "copyright": "Được tạo bởi Kenji Akira❤️",
+    "disclaimer": "Sản phẩm này không liên kết, được tài trợ hoặc xác nhận bởi TikTok hoặc bất kỳ công ty liên kết nào."
+  },
+  "features": {
+    "title": "Tải Video TT Miễn Phí với Công Cụ Tải Video TikTok của Chúng Tôi",
+    "unlimited": {
+      "title": "Tải Không Giới Hạn",
+      "description": "Trải nghiệm tải video không giới hạn với SaveTik. Không ràng buộc, chỉ có nội dung vô tận dành cho bạn."
+    },
+    "watermark": {
+      "title": "Loại Bỏ Logo Chìm",
+      "description": "Dễ dàng loại bỏ logo TikTok khó chịu khỏi video tải xuống của bạn."
+    },
+    "fast": {
+      "title": "Tải Xuống Nhanh Chóng",
+      "description": "Tải video TikTok ngay lập tức với chất lượng cao, đảm bảo trải nghiệm mượt mà."
+    }
+  },
+  "howItWorks": {
+    "title": "Hướng Dẫn Sử Dụng",
+    "subtitle": "Các Bước Đơn Giản Để Tải Video",
+    "steps": [
+      "Sao chép liên kết video TikTok",
+      "Dán vào ô nhập liệu",
+      "Nhấn nút tải xuống",
+      "Lưu video của bạn"
+    ]
+  },
+  "faq": {
+    "title": "Câu Hỏi Thường Gặp",
+    "items": [
+      {
+        "question": "Dịch vụ này có miễn phí không?",
+        "answer": "Có, công cụ tải TikTok của chúng tôi hoàn toàn miễn phí."
+      },
+      {
+        "question": "Chất lượng video tải về như thế nào?",
+        "answer": "Chúng tôi cung cấp chất lượng cao nhất có sẵn từ video TikTok gốc."
+      },
+      {
+        "question": "Có thể tải video riêng tư không?",
+        "answer": "Không, bạn chỉ có thể tải các video TikTok công khai."
+      },
+      {
+        "question": "Có giới hạn số lượng video tải không?",
+        "answer": "Hiện tại không có giới hạn cụ thể, nhưng vui lòng sử dụng dịch vụ một cách có trách nhiệm."
+      }
+    ]
+  },
+  "about": {
+    "title": "Về Dịch Vụ Của Chúng Tôi",
+    "whatWeDo": {
+      "title": "Chúng Tôi Làm Gì",
+      "description": "Chúng tôi cung cấp cách đơn giản và hiệu quả để tải video TikTok. Dịch vụ của chúng tôi được thiết kế để dễ sử dụng và đáng tin cậy."
+    },
+    "features": {
+      "title": "Tính Năng",
+      "items": [
+        "Tải xuống nhanh chóng",
+        "Không cần đăng ký",
+        "Video chất lượng cao",
+        "Giao diện đơn giản"
+      ]
+    },
+    "contact": {
+      "title": "Liên Hệ",
+      "description": "Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào, hãy liên hệ với chúng tôi:"
+    }
+  }
+}
