@@ -1,79 +1,78 @@
 {
-    "nav": {
-      "howItWorks": "Panduan",
-      "faq": "Tanya Jawab",
-      "about": "Tentang Kami"
+  "nav": {
+    "howItWorks": "Cara Kerja",
+    "faq": "FAQ",
+    "about": "Tentang"
+  },
+  "footer": {
+    "description": "Unduh video TikTok tanpa watermark",
+    "copyright": "Dibuat oleh Kenji Akira ❤️",
+    "disclaimer": "Produk ini tidak berafiliasi, disponsori, atau didukung oleh TikTok atau afiliasinya."
+  },
+  "features": {
+    "title": "Unduh Video TikTok Gratis dengan Alat Unduh Video TikTok Kami",
+    "unlimited": {
+      "title": "Unduh Tanpa Batas",
+      "description": "Nikmati pengalaman mengunduh video tanpa batas dengan SaveTik. Tanpa batasan, hanya konten tanpa henti untuk Anda."
     },
-    "footer": {
-      "description": "Unduh video TikTok tanpa watermark",
-      "copyright": "Dibuat oleh Kenji Akira❤️",
-      "disclaimer": "Produk ini tidak terkait, disponsori, atau disetujui oleh TikTok atau perusahaan terkait manapun."
+    "watermark": {
+      "title": "Hapus Watermark",
+      "description": "Mudah untuk menghapus watermark TikTok yang mengganggu dari video yang diunduh."
+    },
+    "fast": {
+      "title": "Unduh Cepat",
+      "description": "Unduh video TikTok secara instan dengan kualitas tinggi, memastikan pengalaman yang lancar."
+    }
+  },
+  "howItWorks": {
+    "title": "Panduan Penggunaan",
+    "subtitle": "Langkah Mudah untuk Mengunduh Video",
+    "steps": [
+      "Salin tautan video TikTok",
+      "Tempelkan di kolom input",
+      "Klik tombol unduh",
+      "Simpan video Anda"
+    ]
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "items": [
+      {
+        "question": "Apakah layanan ini gratis?",
+        "answer": "Ya, alat unduh TikTok kami sepenuhnya gratis."
+      },
+      {
+        "question": "Bagaimana kualitas video yang diunduh?",
+        "answer": "Kami menyediakan kualitas tertinggi yang tersedia dari video TikTok asli."
+      },
+      {
+        "question": "Dapatkah saya mengunduh video pribadi?",
+        "answer": "Tidak, Anda hanya dapat mengunduh video TikTok yang bersifat publik."
+      },
+      {
+        "question": "Apakah ada batasan jumlah video yang dapat diunduh?",
+        "answer": "Saat ini tidak ada batasan jumlah yang spesifik, tetapi harap gunakan layanan ini secara bertanggung jawab."
+      }
+    ]
+  },
+  "about": {
+    "title": "Tentang Layanan Kami",
+    "whatWeDo": {
+      "title": "Apa yang Kami Lakukan",
+      "description": "Kami menyediakan cara sederhana dan efektif untuk mengunduh video TikTok. Layanan kami dirancang untuk mudah digunakan dan dapat diandalkan."
     },
     "features": {
-      "title": "Unduh Video TikTok Gratis dengan Alat Unduh Video TikTok Kami",
-      "unlimited": {
-        "title": "Unduh Tanpa Batas",
-        "description": "Nikmati pengalaman mengunduh video tanpa batas dengan SaveTik. Tanpa batasan, hanya konten tanpa henti untuk Anda."
-      },
-      "watermark": {
-        "title": "Hapus Watermark",
-        "description": "Mudah untuk menghapus watermark TikTok yang mengganggu dari video yang diunduh."
-      },
-      "fast": {
-        "title": "Unduh Cepat",
-        "description": "Unduh video TikTok secara instan dengan kualitas tinggi, memastikan pengalaman yang lancar."
-      }
-    },
-    "howItWorks": {
-      "title": "Panduan Penggunaan",
-      "subtitle": "Langkah Mudah untuk Mengunduh Video",
-      "steps": [
-        "Salin tautan video TikTok",
-        "Tempelkan di kolom input",
-        "Klik tombol unduh",
-        "Simpan video Anda"
-      ]
-    },
-    "faq": {
-      "title": "Pertanyaan yang Sering Diajukan",
+      "title": "Fitur",
       "items": [
-        {
-          "question": "Apakah layanan ini gratis?",
-          "answer": "Ya, alat unduh TikTok kami sepenuhnya gratis."
-        },
-        {
-          "question": "Bagaimana kualitas video yang diunduh?",
-          "answer": "Kami menyediakan kualitas tertinggi yang tersedia dari video TikTok asli."
-        },
-        {
-          "question": "Dapatkah saya mengunduh video pribadi?",
-          "answer": "Tidak, Anda hanya dapat mengunduh video TikTok yang bersifat publik."
-        },
-        {
-          "question": "Apakah ada batasan jumlah video yang dapat diunduh?",
-          "answer": "Saat ini tidak ada batasan jumlah yang spesifik, tetapi harap gunakan layanan ini secara bertanggung jawab."
-        }
+        "Unduh cepat",
+        "Tanpa perlu registrasi",
+        "Video berkualitas tinggi",
+        "Antarmuka yang sederhana"
       ]
     },
-    "about": {
-      "title": "Tentang Layanan Kami",
-      "whatWeDo": {
-        "title": "Apa yang Kami Lakukan",
-        "description": "Kami menyediakan cara sederhana dan efektif untuk mengunduh video TikTok. Layanan kami dirancang untuk mudah digunakan dan dapat diandalkan."
-      },
-      "features": {
-        "title": "Fitur",
-        "items": [
-          "Unduh cepat",
-          "Tanpa perlu registrasi",
-          "Video berkualitas tinggi",
-          "Antarmuka yang sederhana"
-        ]
-      },
-      "contact": {
-        "title": "Kontak Kami",
-        "description": "Jika Anda memiliki pertanyaan atau masalah, silakan hubungi kami:"
-      }
+    "contact": {
+      "title": "Kontak Kami",
+      "description": "Jika Anda memiliki pertanyaan atau masalah, silakan hubungi kami:"
     }
   }
-  
+}

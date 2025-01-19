@@ -254,3 +254,113 @@ body.menu-open::before {
 body.menu-open {
   overflow: hidden;
 }
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: #ff3b8d;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.language-selector.mobile {
+  display: none;
+}
+
+.language-selector.desktop {
+  margin-left: 24px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.lang-btn.active {
+  background: #ff3b8d;
+  border-color: #ff3b8d;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.lang-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-select option {
+  background: #2f2f2f;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .language-selector.desktop {
+    display: none;
+  }
+  
+  .language-selector.mobile {
+    display: flex;
+  }
+  
+  .nav-controls {
+    gap: 12px;
+  }
+  
+  .lang-btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .lang-select {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}

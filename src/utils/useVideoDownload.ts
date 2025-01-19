@@ -40,7 +40,7 @@ export function useVideoDownload() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(isTikTokUrl(url));
-      }, 3000); // Reduced from 10000 to 3000ms
+      }, 3000); 
     });
   };
 
@@ -54,7 +54,7 @@ export function useVideoDownload() {
     try {
       const [isValid] = await Promise.all([
         checkTikTokUrl(tiktokUrl),
-        new Promise(resolve => setTimeout(resolve, 3000)) // Reduced from 10000 to 3000ms
+        new Promise(resolve => setTimeout(resolve, 3000)) 
       ]);
 
       if (!isValid) {

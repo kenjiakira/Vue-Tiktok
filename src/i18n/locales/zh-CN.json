@@ -1,79 +1,78 @@
 {
-    "nav": {
-      "howItWorks": "使用指南",
-      "faq": "常见问题",
-      "about": "关于我们"
+  "nav": {
+    "howItWorks": "使用方法",
+    "faq": "常见问题",
+    "about": "关于"
+  },
+  "footer": {
+    "description": "无水印下载TikTok视频",
+    "copyright": "由 Kenji Akira 制作 ❤️",
+    "disclaimer": "本产品与TikTok或其任何附属公司无关，未受其赞助或认可。"
+  },
+  "features": {
+    "title": "通过我们的TikTok视频下载工具免费下载视频",
+    "unlimited": {
+      "title": "无限下载",
+      "description": "使用SaveTik体验无限下载视频。不受限制，您可以获得无限内容。"
     },
-    "footer": {
-      "description": "下载无水印的TikTok视频",
-      "copyright": "由Kenji Akira❤️创建",
-      "disclaimer": "本产品与TikTok或任何关联公司没有关系，未经其赞助或认证。"
+    "watermark": {
+      "title": "去除水印",
+      "description": "轻松从您下载的视频中去除烦人的TikTok水印。"
+    },
+    "fast": {
+      "title": "快速下载",
+      "description": "即时下载TikTok视频，确保高质量并顺畅体验。"
+    }
+  },
+  "howItWorks": {
+    "title": "使用指南",
+    "subtitle": "简单步骤下载视频",
+    "steps": [
+      "复制TikTok视频链接",
+      "粘贴到输入框中",
+      "点击下载按钮",
+      "保存您的视频"
+    ]
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": [
+      {
+        "question": "这个服务是免费的么?",
+        "answer": "是的，我们的TikTok下载工具是完全免费的。"
+      },
+      {
+        "question": "下载的视频质量如何?",
+        "answer": "我们提供来自TikTok原视频的最高质量。"
+      },
+      {
+        "question": "可以下载私密视频吗?",
+        "answer": "不可以，您只能下载公开的TikTok视频。"
+      },
+      {
+        "question": "下载视频有数量限制吗?",
+        "answer": "目前没有特定的数量限制，但请负责任地使用服务。"
+      }
+    ]
+  },
+  "about": {
+    "title": "关于我们的服务",
+    "whatWeDo": {
+      "title": "我们做什么",
+      "description": "我们提供一个简单高效的方式来下载TikTok视频。我们的服务设计简单易用，且可靠。"
     },
     "features": {
-      "title": "通过我们的TikTok视频下载工具免费下载视频",
-      "unlimited": {
-        "title": "无限下载",
-        "description": "使用SaveTik体验无限下载视频。不受限制，您可以获得无限内容。"
-      },
-      "watermark": {
-        "title": "去除水印",
-        "description": "轻松从您下载的视频中去除烦人的TikTok水印。"
-      },
-      "fast": {
-        "title": "快速下载",
-        "description": "即时下载TikTok视频，确保高质量并顺畅体验。"
-      }
-    },
-    "howItWorks": {
-      "title": "使用指南",
-      "subtitle": "简单步骤下载视频",
-      "steps": [
-        "复制TikTok视频链接",
-        "粘贴到输入框中",
-        "点击下载按钮",
-        "保存您的视频"
-      ]
-    },
-    "faq": {
-      "title": "常见问题",
+      "title": "功能",
       "items": [
-        {
-          "question": "这个服务是免费的么?",
-          "answer": "是的，我们的TikTok下载工具是完全免费的。"
-        },
-        {
-          "question": "下载的视频质量如何?",
-          "answer": "我们提供来自TikTok原视频的最高质量。"
-        },
-        {
-          "question": "可以下载私密视频吗?",
-          "answer": "不可以，您只能下载公开的TikTok视频。"
-        },
-        {
-          "question": "下载视频有数量限制吗?",
-          "answer": "目前没有特定的数量限制，但请负责任地使用服务。"
-        }
+        "快速下载",
+        "无需注册",
+        "高质量视频",
+        "简单界面"
       ]
     },
-    "about": {
-      "title": "关于我们的服务",
-      "whatWeDo": {
-        "title": "我们做什么",
-        "description": "我们提供一个简单高效的方式来下载TikTok视频。我们的服务设计简单易用，且可靠。"
-      },
-      "features": {
-        "title": "功能",
-        "items": [
-          "快速下载",
-          "无需注册",
-          "高质量视频",
-          "简单界面"
-        ]
-      },
-      "contact": {
-        "title": "联系我们",
-        "description": "如果您有任何问题或疑问，请与我们联系："
-      }
+    "contact": {
+      "title": "联系我们",
+      "description": "如果您有任何问题或疑问，请与我们联系："
     }
   }
-  
+}
