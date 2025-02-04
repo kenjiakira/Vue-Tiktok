@@ -2,7 +2,8 @@
   "nav": {
     "howItWorks": "Comment ça marche",
     "faq": "FAQ",
-    "about": "À propos"
+    "about": "À propos",
+    "selectLanguage": "Choisir la langue"
   },
   "footer": {
     "description": "Télécharger des vidéos TikTok sans filigrane",

@@ -2,7 +2,8 @@
   "nav": {
     "howItWorks": "How It Works",
     "faq": "FAQ",
-    "about": "About"
+    "about": "About",
+    "selectLanguage": "Select language"
   },
   "footer": {
     "description": "Download TikTok videos without watermark",

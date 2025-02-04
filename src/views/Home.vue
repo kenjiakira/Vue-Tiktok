@@ -8,20 +8,25 @@
             @click="handlePaste"
             variant="paste"
             :icon-component="ClipboardIcon"
+            aria-label="Paste TikTok URL from clipboard"
+            title="Paste from clipboard"
           />
           <Input
             v-model="tiktokUrl"
             placeholder="Paste TikTok URL"
             :disabled="loading"
             @keyup.enter="downloadVideo"
+            aria-label="TikTok video URL input"
           />
           <Button 
             @click="downloadVideo" 
             :loading="loading"
             :disabled="!tiktokUrl"
             variant="submit"
+            :aria-label="loading ? 'Downloading...' : 'Download TikTok video'"
+            :title="loading ? 'Downloading...' : 'Download video'"
           >
-            <ArrowDownTrayIcon class="w-3 h-3" />
+            <ArrowDownTrayIcon class="w-3 h-3" aria-hidden="true" />
             Download
           </Button>
         </div>

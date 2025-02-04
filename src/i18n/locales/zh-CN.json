@@ -2,7 +2,8 @@
   "nav": {
     "howItWorks": "使用方法",
     "faq": "常见问题",
-    "about": "关于"
+    "about": "关于",
+    "selectLanguage": "选择语言"
   },
   "footer": {
     "description": "无水印下载TikTok视频",

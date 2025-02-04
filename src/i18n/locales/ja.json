@@ -2,7 +2,8 @@
   "nav": {
     "howItWorks": "使い方",
     "faq": "よくある質問",
-    "about": "概要"
+    "about": "概要",
+    "selectLanguage": "言語を選択"
   },
   "footer": {
     "description": "透かしなしでTikTok動画をダウンロード",

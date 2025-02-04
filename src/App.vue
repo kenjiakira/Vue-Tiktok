@@ -11,10 +11,16 @@
         </div>
         <div class="nav-controls">
           <div class="language-selector mobile">
+            <label for="mobile-lang-select" class="visually-hidden">
+              {{ $t('nav.selectLanguage') }}
+            </label>
             <select 
+              id="mobile-lang-select"
               v-model="selectedLang" 
               @change="switchLanguage(selectedLang)"
-              class="lang-select">
+              class="lang-select"
+              aria-label="Select language"
+            >
               <option v-for="(name, code) in SUPPORTED_LANGUAGES" 
                       :key="code" 
                       :value="code">
@@ -32,10 +38,16 @@
           <router-link @click="isMenuOpen = false" to="/faq">{{ $t('nav.faq') }}</router-link>
           <router-link @click="isMenuOpen = false" to="/about">{{ $t('nav.about') }}</router-link>
           <div class="language-selector desktop">
+            <label for="desktop-lang-select" class="visually-hidden">
+              {{ $t('nav.selectLanguage') }}
+            </label>
             <select 
+              id="desktop-lang-select"
               v-model="selectedLang" 
               @change="switchLanguage(selectedLang)"
-              class="lang-select">
+              class="lang-select"
+              aria-label="Select language"
+            >
               <option v-for="(name, code) in SUPPORTED_LANGUAGES" 
                       :key="code" 
                       :value="code">
@@ -91,4 +103,16 @@ onMounted(async () => {
 </script>
 <style>
 @import "./styles/app.css";
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 </style>
