@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Custom Font Awesome';
+  font-display: block;
+  src: url('./custom-fa.woff2') format('woff2');
+}
+
+.fa {
+  font-family: 'Custom Font Awesome';
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fa-download:before { content: "\f019"; }
+.fa-clipboard:before { content: "\f328"; }
+
