@@ -2,9 +2,16 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { compression } from 'vite-plugin-compression2'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    compression({
+      algorithm: 'gzip',
+      exclude: [/\.(br)$/, /\.(gz)$/],
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -12,7 +19,13 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    minify: 'esbuild',  // Chỉ sử dụng esbuild, bỏ lightningcss
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096,
@@ -20,7 +33,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['vue', 'vue-router', 'vue-i18n'],
+          vendor: ['vue', 'vue-router'],
+          utils: ['axios'],
           icons: ['@heroicons/vue']
         },
         assetFileNames: (assetInfo) => {
@@ -38,7 +52,7 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['vue', 'vue-router', 'vue-i18n'],
+    include: ['vue', 'vue-router'],
   },
   server: {
     port: 3000,
@@ -48,11 +62,16 @@ export default defineConfig({
     headers: {
       'Cache-Control': 'public, max-age=31536000',
     },
+    hmr: { overlay: false },
+    cors: true
   },
   preview: {
     port: 8080,
     headers: {
       'Cache-Control': 'public, max-age=31536000',
     },
+  },
+  css: {
+    devSourcemap: true
   }
 })

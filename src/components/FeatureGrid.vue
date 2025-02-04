@@ -36,12 +36,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-const hideFeatures = ref(false)
+import { ref, watch, onMounted } from 'vue'
 
+const hideFeatures = ref(false)
 const isVideoLoading = ref(false)
+
 watch(isVideoLoading, (newVal) => {
   hideFeatures.value = newVal
+}, { flush: 'post' }) 
+const loading = ref(true)
+onMounted(() => {
+  loading.value = false
 })
 </script>
 
@@ -56,13 +61,23 @@ watch(isVideoLoading, (newVal) => {
   text-align: center;
   margin: 2rem 0;
   color: white;
-  font-weight: 600;
-}
+  font-weight: 600;}
 
 @media (max-width: 640px) {
   .optimized-heading {
     font-size: 24px;
     margin: 1.5rem 0;
   }
+}
+
+.features-grid {
+  contain: content;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+.feature {
+  will-change: transform;
+  backface-visibility: hidden;
 }
 </style>
