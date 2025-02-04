@@ -78,11 +78,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Footer from './components/Footer.vue'
 import BuyMeCoffee from './components/BuyMeCoffee.vue'
 import { detectUserLanguage, SUPPORTED_LANGUAGES, type LanguageCode } from './services/languageService'
+import { watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useHead } from '@vueuse/head'
 
 const { locale } = useI18n()
 const isMenuOpen = ref(false)
@@ -97,6 +100,26 @@ const switchLanguage = (lang: LanguageCode) => {
     timestamp: Date.now()
   }))
 }
+
+const route = useRoute()
+
+useHead({
+  title: computed(() => `${route.meta.title || 'SaveTik'} - Download TikTok Videos Without Watermark`),
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => route.meta.description || 'Download TikTok videos without watermark instantly! ⚡ HD quality, 100% free & secure.')
+    },
+    {
+      property: 'og:title',
+      content: computed(() => `${route.meta.title || 'SaveTik'} - Download TikTok Videos`)
+    },
+    {
+      property: 'og:description',
+      content: computed(() => route.meta.description || 'Download TikTok videos without watermark instantly!')
+    }
+  ]
+})
 
 onMounted(async () => {
   try {

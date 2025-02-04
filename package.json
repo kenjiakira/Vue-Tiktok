@@ -21,6 +21,7 @@
     "@distube/ytdl-core": "^4.15.8",
     "@heroicons/vue": "^2.2.0",
     "@types/leaflet": "^1.9.15",
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.7.9",
     "leaflet": "^1.9.4",
     "vue": "^3.3.4",
