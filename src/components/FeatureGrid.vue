@@ -55,7 +55,7 @@ watch(isVideoLoading, (newVal) => {
   font-size: clamp(24px, 4vw, 32px);
   text-align: center;
   margin: 2rem 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  background: linear-gradient(135deg, #ff3b8d 0%, #ff71b3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
