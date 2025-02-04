@@ -6,7 +6,18 @@
     <div class="app-container" v-else>
       <nav>
         <div class="nav-left">
-          <img src="../public/logo.png" alt="SaveTik" class="nav-logo">
+          <picture>
+            <source srcset="/logo.webp" type="image/webp">
+            <source srcset="/logo.avif" type="image/avif">
+            <img 
+              src="../public/logo.png" 
+                alt="SaveTik" 
+                class="nav-logo"
+                width="48"
+              height="48"
+              loading="lazy"
+            >
+          </picture>
           <router-link to="/" class="brand-name">SaveTik</router-link>
         </div>
         <div class="nav-controls">

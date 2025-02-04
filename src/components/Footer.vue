@@ -3,7 +3,18 @@
     <div class="footer-content">
       <div class="footer-left">
         <div class="footer-logo">
-          <img src="/public/logo.png" alt="SaveTik" class="footer-logo-img">
+          <picture>
+            <source srcset="/logo.webp" type="image/webp">
+            <source srcset="/logo.avif" type="image/avif">
+            <img 
+              src="/logo.png" 
+              alt="SaveTik"
+              class="footer-logo-img"
+              width="32"
+              height="32"
+              loading="lazy"
+            >
+          </picture>
           <span class="footer-brand">SaveTik</span>
         </div>
         <p class="footer-description">{{ $t('footer.description') }}</p>
