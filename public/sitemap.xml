@@ -5,63 +5,63 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://savetik.app/</loc>
+    <loc>https://savetik.io.vn/</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/how-it-works</loc>
+    <loc>https://savetik.io.vn/how-it-works</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/faq</loc>
+    <loc>https://savetik.io.vn/faq</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/about</loc>
+    <loc>https://savetik.io.vn/about</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/vi</loc>
+    <loc>https://savetik.io.vn/vi</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/fr</loc>
+    <loc>https://savetik.io.vn/fr</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/ja</loc>
+    <loc>https://savetik.io.vn/ja</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/zh</loc>
+    <loc>https://savetik.io.vn/zh</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://savetik.app/id</loc>
+    <loc>https://savetik.io.vn/id</loc>
     <lastmod>2024-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
