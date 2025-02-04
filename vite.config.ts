@@ -12,7 +12,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    minify: 'esbuild', // Sử dụng esbuild thay vì lightningcss
+    minify: 'esbuild',  // Chỉ sử dụng esbuild, bỏ lightningcss
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096,
