@@ -8,13 +8,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      'leaflet': 'leaflet'
-    },
+    }
   },
   build: {
     target: 'esnext',
-    minify: 'esbuild',
-    cssMinify: 'lightningcss',
+    minify: 'esbuild', // Sử dụng esbuild thay vì lightningcss
     cssCodeSplit: true,
     chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096,
@@ -22,13 +20,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          leaflet: ['leaflet'],
           vendor: ['vue', 'vue-router', 'vue-i18n'],
           icons: ['@heroicons/vue']
         },
         assetFileNames: (assetInfo) => {
           if (assetInfo.name) {
-
             if (/\.(woff2?|ttf|eot)$/.test(assetInfo.name)) {
               return 'assets/fonts/[name]-[hash][extname]'
             }
@@ -42,12 +38,10 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['vue', 'vue-router', 'vue-i18n', 'leaflet'],
-    exclude: []
+    include: ['vue', 'vue-router', 'vue-i18n'],
   },
   server: {
     port: 3000,
-
     fs: {
       strict: true,
     },
