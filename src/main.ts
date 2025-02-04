@@ -10,7 +10,7 @@ const app = createApp(App)
 
 app.use(i18n)
 app.use(router)
-
+  
 app.config.performance = true
 app.config.errorHandler = (err, vm, info) => {
   console.error('App Error:', err)
