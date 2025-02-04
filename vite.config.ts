@@ -39,11 +39,20 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['vue', 'vue-router', 'vue-i18n'],
+    exclude: ['@vueuse/core']
   },
   server: {
     port: 3000,
+    host: true,
+    hmr: {
+      overlay: false
+    },
+    watch: {
+      usePolling: false,
+      interval: 100
+    },
     fs: {
-      strict: true,
+      strict: false,
     },
     headers: {
       'Cache-Control': 'public, max-age=31536000',
