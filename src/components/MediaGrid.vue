@@ -51,7 +51,7 @@ const props = defineProps<{
   images?: string[]
   video?: string
   downloading?: boolean
-  videoId: string  // Add new prop for video ID
+  videoId: string  
 }>();
 
 const currentMediaType = computed(() => {
@@ -75,7 +75,6 @@ defineEmits<{
   font-weight: bold;
 }
 
-/* Remove duplicate styles that are already in media.css */
 .center-text {
   justify-content: center;
   margin: 0 auto;

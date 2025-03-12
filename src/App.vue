@@ -48,6 +48,8 @@
           <router-link @click="isMenuOpen = false" to="/how-it-works">{{ $t('nav.howItWorks') }}</router-link>
           <router-link @click="isMenuOpen = false" to="/faq">{{ $t('nav.faq') }}</router-link>
           <router-link @click="isMenuOpen = false" to="/about">{{ $t('nav.about') }}</router-link>
+          <router-link @click="isMenuOpen = false" to="/terms">{{ $t('nav.terms') }}</router-link>
+          <router-link @click="isMenuOpen = false" to="/privacy">{{ $t('nav.privacy') }}</router-link>
           <div class="language-selector desktop">
             <label for="desktop-lang-select" class="visually-hidden">
               {{ $t('nav.selectLanguage') }}

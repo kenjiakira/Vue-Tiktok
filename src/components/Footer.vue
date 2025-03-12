@@ -24,6 +24,8 @@
         <router-link to="/how-it-works">{{ $t('nav.howItWorks') }}</router-link>
         <router-link to="/faq">{{ $t('nav.faq') }}</router-link>
         <router-link to="/about">{{ $t('nav.about') }}</router-link>
+        <router-link to="/terms">{{ $t('nav.terms') }}</router-link>
+        <router-link to="/privacy">{{ $t('nav.privacy') }}</router-link>
       </div>
     </div>
     <div class="footer-bottom">
